@@ -4,4 +4,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee">
 
+	<interceptors>
+		<class>
+			com.fabx.util.TransactionInterceptor
+		</class>
+	</interceptors>
+
 </beans>
