@@ -5,41 +5,41 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title>Ask</title>	
-	<h:outputStylesheet library="css" name="ask.css"/>
+	<title>Ask</title>
+	<h:outputStylesheet library="css" name="ask.css" />
 </h:head>
 
 <h:body>
 
 	<header>
-		<h5>AskAnwser</h5>
+	<h5>AskAnwser</h5>
 	</header>
 
 	<div class="container">
 
-	<h:form>
+		<h:form>
 
-		<h:panelGrid columns="2">
+			<h:panelGrid columns="2">
 
-			<h:outputLabel value="Titulo" />
-			<h:inputText value="#{controllerAsk.ask.title}" class="text-enter"/>
-			
-			<h:outputLabel value="Descrição" />
-			<h:inputTextarea value="#{controllerAsk.ask.description}" rows="5" cols="30"/>
-			
-			<h:outputLabel value="Data da pergunta" />
-			<h:inputText value="#{controllerAsk.ask.askDate}" class="text-enter">
-				<f:convertDateTime pattern="dd/MM/yyyy" type="date"/>
-			</h:inputText>
+				<h:outputLabel value="Titulo" />
+				<h:inputText value="#{controllerAsk.ask.title}" class="text-enter" />
 
-			<h:commandButton action="#{controllerAsk.insert()}"
-				value="Inserir" class="btn"/>
-		
-		</h:panelGrid>
-		
-	</h:form>
+				<h:outputLabel value="Descrição" />
+				<h:inputTextarea value="#{controllerAsk.ask.description}" rows="5"
+					cols="30" />
 
-</div>
+				<h:outputLabel value="Data da pergunta" />
+				<h:inputText value="#{controllerAsk.ask.askDate}" class="text-enter"
+					converter="converterCalendar" id="dataPergunta" />
+
+				<h:commandButton action="#{controllerAsk.insert()}" value="Inserir"
+					class="btn" />
+
+			</h:panelGrid>
+
+		</h:form>
+
+	</div>
 </h:body>
 
 </html>

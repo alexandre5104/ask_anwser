@@ -17,8 +17,7 @@ public class ControllerAsk {
 	private Ask ask = new Ask();
 
 	public void insert() {
-		System.out.println("Chamou o insert!");
-		//serviceAsk.insert(ask);
+		serviceAsk.insert(ask);
 	}
 	
 	public Ask getAsk() {
