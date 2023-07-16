@@ -1,35 +1,32 @@
 package com.fabx;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+
+import com.fabx.model.Ask;
+import com.fabx.services.ServiceAsk;
 
 @RequestScoped
 @Named
 public class ControllerAsk {
-
-	private String nome;
 	
-	private String nomeTransformado;
+	@Inject
+	private ServiceAsk serviceAsk;
 	
-	public void upper() {
-		this.nomeTransformado = this.nome.toUpperCase();
-	}
+	private Ask ask = new Ask();
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNomeTransformado() {
-		return nomeTransformado;
-	}
-
-	public void setNomeTransformado(String nomeTransformado) {
-		this.nomeTransformado = nomeTransformado;
+	public void insert() {
+		System.out.println("Chamou o insert!");
+		//serviceAsk.insert(ask);
 	}
 	
+	public Ask getAsk() {
+		return ask;
+	}
+
+	public void setAsk(Ask ask) {
+		this.ask = ask;
+	}
 	
 }

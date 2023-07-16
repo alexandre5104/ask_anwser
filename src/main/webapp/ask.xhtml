@@ -1,27 +1,95 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title>
-		Ask
-	</title>
+	<title>Ask</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+			box-sizing: border-box;
+		}
+		
+		body{
+			background-color:#DCDCDC;
+		}
+		
+		header{
+			background-color:blue;
+			height: 50px;
+			margin-bottom:20px;
+			display:flex;
+			align-items: center;
+			color: white;
+			padding:10px
+		}
+		
+		.container{
+			display:flex;
+			align-items: center;
+			width: 90%;
+			margin: 0 auto;
+			background-color: white;
+			padding:20px;
+			box-shadow: 1px 1px 7px black;
+			border-radius:4px;
+		}
+		
+		.container .text-enter{
+			height: 40px;
+			width: 700px;
+			outline:none;
+			border-radius: 3px;
+			border:1px solid gray;
+		}
+		
+		.container .btn{
+			padding:10px 15px;
+			background-color: #1E90FF;
+			color:white;
+			margin-top:10px;
+			border:none;
+			border-radius:5px;
+		}
+		
+		td{
+			padding:5px;
+		}
+	</style>
 </h:head>
 
 <h:body>
-	
-	<h:form>
-		<h:outputLabel value="Nome" />
-		<h:inputText value="#{controllerAsk.nome}" />
-		
-		<h:commandButton action="#{controllerAsk.upper()}" value="Transformar Maiuscula" />
 
-		<h:outputText value="#{controllerAsk.nomeTransformado}" />
+	<header>
+		<h5>AskAnwser</h5>
+	</header>
+
+	<div class="container">
+
+	<h:form>
+
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="Titulo" />
+			<h:inputText value="titulo" class="text-enter"/>
+			
+			<h:outputLabel value="Descrição" />
+			<h:inputTextarea value="descricao" rows="5" cols="30"/>
+			
+			<h:outputLabel value="Data da pergunta" />
+			<h:inputText value="#{data}" class="text-enter"/>
+
+			<h:commandButton action="#{controllerAsk.insert()}"
+				value="Inserir" class="btn"/>
+		
+		</h:panelGrid>
+		
 	</h:form>
 
-	
+</div>
 </h:body>
 
 </html>
