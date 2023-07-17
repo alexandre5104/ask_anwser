@@ -10,7 +10,9 @@ import javax.faces.context.Flash;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.fabx.model.Answer;
 import com.fabx.model.Ask;
+import com.fabx.services.ServiceAnswer;
 import com.fabx.services.ServiceAsk;
 
 @Named
@@ -19,23 +21,30 @@ public class ControllerAnswer {
 
 	@Inject
 	private ServiceAsk serviceAsk;
+	
+	@Inject
+	private ServiceAnswer serviceAnswer;
 
 	private List<Ask> asks = new ArrayList<Ask>();
 
 	private Integer id;
+	
+	private Answer answer = new Answer();
 
 	@PostConstruct
 	public void init() {
 		asks = serviceAsk.getAsks();
 	}
+	
+	public String inserir() {
+		System.out.println(this.id);
+		serviceAnswer.inserir(this.id, answer);
+		return "asks";
+	}
 
 	public String recebeParametro(Integer idParam) {
-		System.out.println("Id recebido " + idParam);
-
-		Flash flashScope = FacesContext.getCurrentInstance().getExternalContext().getFlash();
-		flashScope.put("id", idParam);
-
-		return "anwser?faces-redirect=true";
+		this.id = idParam;
+		return "anwser";
 	}
 
 	public List<Ask> getAsks() {
@@ -52,6 +61,14 @@ public class ControllerAnswer {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Answer getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(Answer answer) {
+		this.answer = answer;
 	}
 
 
