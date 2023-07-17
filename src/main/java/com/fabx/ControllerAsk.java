@@ -15,9 +15,10 @@ public class ControllerAsk {
 	private ServiceAsk serviceAsk;
 	
 	private Ask ask = new Ask();
-
+	
 	public void insert() {
 		serviceAsk.insert(ask);
+		ask = new Ask();
 	}
 	
 	public Ask getAsk() {

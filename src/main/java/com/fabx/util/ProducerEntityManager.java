@@ -16,7 +16,7 @@ public class ProducerEntityManager {
 	public ProducerEntityManager() {
 		System.out.println("Producer EntityManager");
 		factory = Persistence
-				.createEntityManagerFactory("campeonatoPU");
+				.createEntityManagerFactory("askPU");
 	}
 	
 	@RequestScoped @Produces

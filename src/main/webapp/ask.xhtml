@@ -30,11 +30,6 @@
 				<h:outputLabel value="Descrição" />
 				<p:inputTextarea value="#{controllerAsk.ask.description}" rows="5"
 					cols="30" placeholder="Digite a descrição para a pergunta"/>
-
-				<h:outputLabel value="Data da pergunta" />
-				<p:inputMask mask="99/99/9999" value="#{controllerAsk.ask.askDate}" class="text-data"
-					converter="converterCalendar" id="dataPergunta" 
-					style="padding:15px;" placeholder="dia/mes/ano"/>
 				
 				<p:commandButton action="#{controllerAsk.insert()}" value="Inserir"
 						class="btn" icon="pi pi-save"/>
