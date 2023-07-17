@@ -27,16 +27,19 @@ header {
 	margin: 0 auto;
 	background-color: white;
 	padding: 20px;
-	box-shadow: 1px 1px 7px black;
+	box-shadow: 1px 1px 7px gray;
 	border-radius: 4px;
 }
 
-.container .text-enter {
+.container .text-enter, .text-data {
 	height: 40px;
-	width: 700px;
 	outline: none;
 	border-radius: 3px;
 	border: 1px solid gray;
+}
+
+.container .text-enter{
+	width: 600px;
 }
 
 .container .btn {
