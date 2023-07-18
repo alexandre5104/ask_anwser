@@ -44,6 +44,7 @@ public class ControllerAnswer {
 
 	public String recebeParametro(Integer idParam) {
 		this.id = idParam;
+		System.out.println("Executou");
 		return "anwser";
 	}
 
@@ -70,7 +71,4 @@ public class ControllerAnswer {
 	public void setAnswer(Answer answer) {
 		this.answer = answer;
 	}
-
-
-
 }

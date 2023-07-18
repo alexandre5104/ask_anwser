@@ -4,30 +4,19 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	
 }
 
 body{
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-	background:linear-gradient(to top, blue, #1a75ff);
-	height: 50px;
-	margin-bottom: 20px;
-	display: flex;
-	align-items: center;
-	color: white;
-	padding: 10px
-}
-
-.container {
+.cont {
 	display: flex;
 	align-items: center;
 	width: 60%;
 	margin: 0 auto;
 	padding: 20px;
-	border: 1px solid #ebebe0;
+	border: 1px solid #b8b894;
 	border-radius: 4px;
 }
 
