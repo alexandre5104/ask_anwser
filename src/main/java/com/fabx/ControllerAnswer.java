@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
-import javax.faces.context.Flash;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -31,6 +29,8 @@ public class ControllerAnswer {
 	
 	private Answer answer = new Answer();
 
+	private List<Answer> answers = new ArrayList<Answer>();
+
 	@PostConstruct
 	public void init() {
 		asks = serviceAsk.getAsks();
@@ -46,6 +46,14 @@ public class ControllerAnswer {
 		this.id = idParam;
 		System.out.println("Executou");
 		return "anwser";
+	}
+	
+	public String getListAnswers(Integer idAsk) {
+		answers = serviceAnswer.getAnswers(idAsk);
+		for (Answer answer : answers) {
+			System.out.println(answer.getDescription());
+		}
+		return "answer_of_ask";
 	}
 
 	public List<Ask> getAsks() {
@@ -71,4 +79,13 @@ public class ControllerAnswer {
 	public void setAnswer(Answer answer) {
 		this.answer = answer;
 	}
+	
+	public List<Answer> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
+
 }

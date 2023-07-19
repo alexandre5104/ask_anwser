@@ -41,7 +41,7 @@ public class ConverterCalendar implements Converter<Calendar>{
 		
 		Calendar calendar = (Calendar) value;
 		
-		SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat s = new SimpleDateFormat("E, dd MMM yyyy");
 
 		String dataPergunta = s.format(calendar.getTime());
 		return dataPergunta;

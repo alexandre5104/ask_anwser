@@ -6,28 +6,27 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/WEB-INF/template/template.xhtml">
-
 	<ui:define name="body">
-
 		<div class="container">
-
 			<ui:repeat var="ask" value="#{controllerAnswer.asks}">
-
 				<div class="card">
-
 					<div class="data">
 						<h:outputText value="#{ask.askDate}" converter="converterCalendar" />
 					</div>
-
 					<div class="title">
 						<div>
 							<h1 style="padding-bottom: 30px">
 								<h:inputHidden value="#{ask.id}" />
-								#{ask.title}
+								<h:form>
+									<h:commandLink
+										action="#{controllerAnswer.getListAnswers(ask.id)}"
+										value="#{ask.title}" />
+								</h:form>
 							</h1>
 						</div>
 						<div>
 							<h:outputText value="#{ask.description}" />
+
 						</div>
 					</div>
 
@@ -37,7 +36,6 @@
 								action="#{controllerAnswer.recebeParametro(ask.id)}" />
 						</h:form>
 					</div>
-
 				</div>
 			</ui:repeat>
 		</div>
