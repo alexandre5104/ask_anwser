@@ -8,6 +8,7 @@
 
 body {
 	background-color: #ebebe0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -26,6 +27,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	background-color: #ebebe0;
+	flex-direction: column;
 }
 
 .card {
@@ -33,10 +35,10 @@ header {
 	padding: 10px;
 	background-color: white;
 	border-left: 5px solid orange;
-
 	display: flex;
 	flex-direction: column;
 	border-radius:5px;
+	margin:5px;
 }
 
 .data, .title, .button{

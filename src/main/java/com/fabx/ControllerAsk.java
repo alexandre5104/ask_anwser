@@ -16,9 +16,10 @@ public class ControllerAsk {
 	
 	private Ask ask = new Ask();
 	
-	public void insert() {
+	public String insert() {
 		serviceAsk.insert(ask);
 		ask = new Ask();
+		return "asks?faces-redirect=true";
 	}
 	
 	public Ask getAsk() {

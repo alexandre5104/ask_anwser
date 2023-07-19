@@ -2,19 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="body">
-		<div class="container">
+		
 			<ui:repeat var="answer" value="#{controllerAnswer.answers}">
 				<div class="card">
-					<div>
+					<div class=";">
 						<h:outputText value="#{answer.description}" />
 					</div>
 				</div>
 			</ui:repeat>
-		</div>
+			<div style="width: 80%; padding:10px">
+				<p:button outcome="asks" value="voltar"/>
+			</div>
+			
 	</ui:define>
 </ui:composition>
 </html>
