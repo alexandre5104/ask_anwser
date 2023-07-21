@@ -1,4 +1,4 @@
 # ask_anwser
 
-## Description
+## Descrição
 O projeto trata de uma plataforma de perguntas e respostas
