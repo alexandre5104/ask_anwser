@@ -7,14 +7,17 @@
 }
 
 .cont {
-	display: flex;
 	align-items: center;
-	width: 60%;
+	width: 80%;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 50px;
 	border-radius: 4px;
 	background-color: white;
 	box-shadow: 1px 1px 15px gray;
+}
+
+.formulario{
+	width: 100%;
 }
 
 h2{
@@ -23,7 +26,12 @@ h2{
 }
 
 label{
-	font-weight: bolder
+	font-weight: bolder;
+
+}
+
+table{
+	width: 100%;
 }
 
 td{

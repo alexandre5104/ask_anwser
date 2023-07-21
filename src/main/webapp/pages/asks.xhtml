@@ -10,7 +10,7 @@
 			<ui:repeat var="ask" value="#{controllerAnswer.asks}">
 				<div class="card">
 					<div class="data">
-						<h:outputText value="#{ask.askDate}" converter="converterCalendar" />
+						<h:outputLabel value="#{ask.askDate}" converter="converterCalendar" />
 					</div>
 					<div class="title">
 						<div>
@@ -18,13 +18,13 @@
 								<h:inputHidden value="#{ask.id}" />
 								<h:form>
 									<h:commandLink
-										action="#{controllerAnswer.getListAnswers(ask.id)}"
+										action="#{controllerAnswer.getListAnswers(ask.id, ask)}"
 										value="#{ask.title}" />
 								</h:form>
 							</h1>
 						</div>
 						<div>
-							<h:outputText value="#{ask.description}" />
+							<h:outputLabel value="#{ask.description}" />
 						</div>
 					</div>
 

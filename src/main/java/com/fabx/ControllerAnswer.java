@@ -26,8 +26,10 @@ public class ControllerAnswer {
 	private List<Ask> asks = new ArrayList<Ask>();
 
 	private Integer id;
-	
+		
 	private Answer answer = new Answer();
+	
+	private Ask askReturn;
 
 	private List<Answer> answers = new ArrayList<Answer>();
 
@@ -44,15 +46,12 @@ public class ControllerAnswer {
 
 	public String recebeParametro(Integer idParam) {
 		this.id = idParam;
-		System.out.println("Executou");
 		return "anwser";
 	}
 	
-	public String getListAnswers(Integer idAsk) {
+	public String getListAnswers(Integer idAsk, Ask ask) {
 		answers = serviceAnswer.getAnswers(idAsk);
-		for (Answer answer : answers) {
-			System.out.println(answer.getDescription());
-		}
+		this.askReturn = ask;
 		return "answer_of_ask";
 	}
 
@@ -80,6 +79,15 @@ public class ControllerAnswer {
 		this.answer = answer;
 	}
 	
+	public Ask getAskReturn() {
+		return askReturn;
+	}
+
+	public void setAskReturn(Ask askReturn) {
+		this.askReturn = askReturn;
+	}
+
+	
 	public List<Answer> getAnswers() {
 		return answers;
 	}
@@ -87,5 +95,4 @@ public class ControllerAnswer {
 	public void setAnswers(List<Answer> answers) {
 		this.answers = answers;
 	}
-
 }

@@ -8,17 +8,19 @@
 <ui:composition template="/WEB-INF/template/template.xhtml">
 
 	<ui:define name="body">
-	
+
 		<div class="cont">
 
 			<h:form id="formulario">
 
 				<h2>Cadastro de Pergunta</h2>
 
-				<h:panelGrid columns="2">
+				<h:panelGrid width="100%">
 					<h:outputLabel value="Titulo" />
-					<p:inputText value="#{controllerAsk.ask.title}" size="50"
-						style="padding:10px;font-size:15px"
+					<p:inputText value="#{controllerAsk.ask.title}" 
+						style="padding:10px;
+						font-size:15px; 
+						width:100%"
 						placeholder="Digite o titulo para a pegunta" />
 
 					<h:outputLabel value="Descrição" />
@@ -26,8 +28,7 @@
 						cols="30" placeholder="Digite a descrição para a pergunta" />
 
 					<p:commandButton action="#{controllerAsk.insert()}" value="Inserir"
-						class="btn" icon="pi pi-save"
-						resetValues="true"/>
+						class="btn" icon="pi pi-save" resetValues="true" />
 
 				</h:panelGrid>
 

@@ -8,10 +8,25 @@
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="body">
 		
+			<div class="card" style="border-left: 5px solid blue">
+				<div>
+					<h1>#{controllerAnswer.askReturn.title}</h1>
+				</div>
+				<hr></hr>
+				<div style="margin-top: 10px">
+					<h:outputLabel value="#{controllerAnswer.askReturn.description}" />
+				</div>
+			</div>
+			
+			<div style="width: 80%;
+			display:flex;padding:10px">
+				<h2>#{controllerAnswer.answers.size()} Respostas</h2>
+			</div>
+			
 			<ui:repeat var="answer" value="#{controllerAnswer.answers}">
 				<div class="card">
-					<div class=";">
-						<h:outputText value="#{answer.description}" />
+					<div>
+						<h:outputLabel value="#{answer.description}" />
 					</div>
 				</div>
 			</ui:repeat>
